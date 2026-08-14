@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8f9fa;
+    color: #151c2c;
+    min-height: 100vh;
+    padding: 48px 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.header {
+    height: 96px;
+    background: #f8f1f1;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.08);
+}
+
+.header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.todo-container {
+    min-height: 808px;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.input-container {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+#taskInput {
+    flex: 1;
+    height: 52px;
+    border: none;
+    outline: none;
+    border-radius: 14px;
+    background: #f1f2f5;
+    padding: 0 16px;
+    font-size: 15px;
+    color: #1f2937;
+}
+
+#taskInput::placeholder {
+    color: #687184;
+}
+
+#taskInput:focus {
+    box-shadow: 0 0 0 2px rgba(181, 111, 111, 0.2);
+}
+
+#addBtn {
+    width: 70px;
+    height: 52px;
+    border: none;
+    border-radius: 14px;
+    background: #b56f6f;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+    box-shadow: 0 8px 16px rgba(181, 111, 111, 0.22);
+}
+
+#addBtn:hover {
+    background: #a76262;
+    transform: translateY(-1px);
+}
+
+#addBtn:active {
+    transform: translateY(0);
+}
+
+.task {
+    min-height: 64px;
+    border: 1px solid #dde1e7;
+    border-radius: 16px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    gap: 16px;
+    transition: 0.2s ease;
+    background: #ffffff;
+}
+
+.task:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.task-checkbox {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #bd7272;
+    border-radius: 50%;
+    background: white;
+    flex-shrink: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s ease;
+}
+
+.task-checkbox:hover {
+    background: #f9eeee;
+}
+
+.task-checkbox.completed {
+    background: #b56f6f;
+    border-color: #b56f6f;
+}
+
+.task-checkbox.completed::after {
+    content: "✓";
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.task-text {
+    flex: 1;
+    font-size: 15px;
+    font-weight: 600;
+    color: #172033;
+    word-break: break-word;
+}
+
+.task.completed .task-text {
+    text-decoration: line-through;
+    color: #8a909b;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 12px;
+    background: #f1f2f5;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s ease;
+}
+
+.action-btn:hover {
+    background: #e7e9ed;
+}
+
+.action-btn svg {
+    width: 19px;
+    height: 19px;
+    stroke: #697383;
+    stroke-width: 2;
+    fill: none;
+}
+
+.delete-btn:hover {
+    background: #f9eaea;
+}
+
+.delete-btn:hover svg {
+    stroke: #b56f6f;
+}
+
+.edit-input {
+    flex: 1;
+    height: 38px;
+    border: 1px solid #d8dce2;
+    border-radius: 8px;
+    padding: 0 10px;
+    font-size: 15px;
+    outline: none;
+}
+
+.edit-input:focus {
+    border-color: #b56f6f;
+}
+
+.empty-message {
+    text-align: center;
+    color: #8b929f;
+    padding: 40px 0;
+    font-size: 15px;
+}
+
+@media (max-width: 700px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    .header {
+        height: 80px;
+        border-radius: 18px;
+        margin-bottom: 16px;
+    }
+
+    .header h1 {
+        font-size: 26px;
+    }
+
+    .todo-container {
+        padding: 20px;
+        min-height: calc(100vh - 116px);
+        border-radius: 18px;
+    }
+
+    .input-container {
+        gap: 8px;
+    }
+
+    #addBtn {
+        width: 64px;
+    }
+
+    .task {
+        padding: 10px 12px;
+        gap: 12px;
+    }
+
+    .actions {
+        gap: 5px;
+    }
+
+    .action-btn {
+        width: 34px;
+        height: 34px;
+    }
+
+    .task-text {
+        font-size: 14px;
+    }
+}
