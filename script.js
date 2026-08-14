@@ -182,13 +182,17 @@ function toggleTask(id) {
 }
 
 function deleteTask(id) {
+    const isConfirmed = confirm("Are you sure you want to delete this task?");
+
+    if (!isConfirmed) {
+        return; 
+    }
 
     tasks = tasks.filter(function(task) {
         return task.id !== id;
     });
 
     saveTasks();
-
     renderTasks();
 }
 
